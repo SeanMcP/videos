@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title Screen – seanmcp</title>
+    <style>
+        body {
+            --background: #212121;
+            --text-color: white;
+            font-family: 'Fira Code';
+            margin: 0;
+        }
+
+        main {
+            background: var(--background);
+            color: var(--text-color);
+            display: grid;
+            height: 100vh;
+            place-items: center;
+            position: relative;
+            width: 100vw;
+        }
+
+        #greeting {
+            font-size: 8rem;
+            font-weight: bold;
+            margin: 0;
+            text-align: center;
+        }
+
+        #title {
+            background: var(--text-color);
+            color: var(--background);
+            display: table;
+            font-size: 4rem;
+            font-weight: bold;
+            padding: 0.5rem 1.25rem;
+        }
+
+        *[hidden] { display: none !important }
+
+        footer {
+            bottom: 0;
+            color: hsl(0, 0%, 35%);
+            font-size: 2rem;
+            padding: 1rem;
+            position: absolute;
+            margin: 0 auto;
+        }
+
+        video {
+            border: 0.5rem solid var(--text-color);
+            bottom: 0;
+            box-shadow: 0 0 2rem black;
+            height: 33.3%;
+            position: fixed;
+            right: 50%;
+            transform: translateX(50%);
+        }
+
+        body[data-video="true"] .page {
+            transform: translateY(-10rem);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="page" id="greeting">
+            <span>Hey Dev</span>
+        </section>
+        <section class="page" id="title" hidden>
+        </section>
+        <footer>
+            seanmcp
+        </footer>
+    </main>
+    <script>
+        console.info('Customize this title screen with search params')
+        console.table({ title: ':string – Will render on page two', video: ':boolean – Will display a live video and readjust page'})
+    </script>
+    <script>
+        let greetingPage = document.getElementById('greeting')
+        let titlePage = document.getElementById('title')
+        let params = new URLSearchParams(location.search)
+        let pages = document.querySelectorAll('.page')
+        let currentPageIndex = 0
+
+        titlePage.textContent = params.get('title') || 'Set a title via search params'
+
+        function nextPage() {
+            currentPageIndex = currentPageIndex + 1 > pages.length - 1 ? 0 : currentPageIndex + 1
+
+            pages.forEach((page, i) => {
+                if (currentPageIndex === i) {
+                    page.removeAttribute('hidden')
+                } else {
+                    page.hidden = "true"
+                }
+            })
+        }
+
+        document.addEventListener('keydown', e => {
+            if (e.code === 'Space') {
+                e.preventDefault()
+                nextPage()
+            }
+        })
+    </script>
+    <script>
+        if (params.get('video') === "true") {
+            document.body.dataset.video = "true"
+            let videoEl = document.createElement('video')
+            videoEl.autoplay = true
+            document.body.appendChild(videoEl)
+
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    videoEl.srcObject = stream
+                })
+                .catch(error => console.error(error))
+        }
+    </script>
+</body>
+</html>
