@@ -1,5 +1,6 @@
 # Checklist
 
+- [ ] Close all other programs
 - [ ] Remove extra menu-bar icons
   - [ ] Docker
   - [ ] VPN
