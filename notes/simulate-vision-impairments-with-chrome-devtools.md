@@ -2,7 +2,7 @@ Hey Dev and welcome back to another video.
 
 Today we're going to learn how to simulate vision impairments with the Chrome DevTools.
 
-For this video, I will be using Chrome version {{ READ VERSION }
+For this video, I will be using Chrome version <VERSION>
 
 Let's begin.
 

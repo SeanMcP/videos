@@ -2,7 +2,7 @@ Hey Dev and welcome back to another video.
 
 Today we are going to learn how to set DOM breakpoints in the Firefox DevTools.
 
-For this video, I will be using Firefox version {{ VERSION }}
+For this video, I will be using Firefox version <VERSION>
 
 Let's jump in.
 
