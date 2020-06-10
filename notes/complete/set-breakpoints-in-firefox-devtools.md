@@ -6,7 +6,7 @@ For this video, I'm going to be using Firefox <VERSION>. Let's jump in.
 
 To illustrate this, we're going to use this simple counter I created. If you want to follow along, the link will be in the description.
 
-A breakpoint is a an intentional pausing place in a program. When the JavaScript engine hits a breakpoint, it will stop everything and give you a window into your code at that point.
+A breakpoint is a an intentional pausing place in a program. When the JavaScript engine running in the browser hits a breakpoint, it will stop everything and give you a window into your code at that point.
 
 In Firefox, you can set breakpoints in the Debugger tab of the DevTools. To open the Debugger, you can use the keyboard shortcut control shift z or command option z.
 
@@ -24,7 +24,7 @@ To continue, you can hit play at the top of the window or here in the debugger.
 
 To remove that breakpoint, you can either click tag, use the keyboard shortcut, or right click "Remove Breakpoint".
 
-The second type of breakpoint that we're going to add is a condition. This will break when code your provide evaluates to a truthy value.
+The second type of breakpoint that we're going to add is a condition. This will break when code you provide evaluates to true or truthy.
 
 Let's take a look at the increment button's click event listener. Let's say I want to break only when the next value is greater than five. So on line 21 I can set a condition breakpoint by right clicking and selecting "Add a condition" or using the shortcut.
 
@@ -46,6 +46,6 @@ If I go over to the console and change the counter, I can see that log with a ta
 
 To remove the breakpoint, I can click the tag, use the keyboard shortcut, right click "Remove breakpoint", or remove it from the "Breakpoints" section in the debugger.
 
-In this video we learned how to set breakpoints, condition breakpoints, and logpoints in the Firefox DevTools; and how to remove them.
+In this video we learned how to set and remove breakpoints, condition breakpoints, and logpoints in the Firefox DevTools.
 
 That's all for now. I'll see you in the next video.
