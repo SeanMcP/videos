@@ -27,6 +27,7 @@ main {
   color: var(--background);
   display: table;
   padding: 0.5rem 1.25rem;
+  text-align: center;
 }
 
 #title,
@@ -40,17 +41,17 @@ main {
 }
 
 video {
-    border: 0.5rem solid var(--text-color);
-    bottom: 0;
-    box-shadow: 0 0 2rem black;
-    height: 33.3%;
-    position: fixed;
-    right: 50%;
-    transform: translateX(50%);
+  border: 0.5rem solid var(--text-color);
+  bottom: 0;
+  box-shadow: 0 0 2rem black;
+  height: 33.3%;
+  position: fixed;
+  right: 50%;
+  transform: translateX(50%);
 }
 
 body[data-video="true"] .page {
-    transform: translateY(-10rem);
+  transform: translateY(-10rem);
 }
 
 footer {
