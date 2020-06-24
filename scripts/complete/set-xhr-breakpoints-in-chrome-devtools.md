@@ -28,7 +28,7 @@ From this point, I can step through my code using the debugging toolbar. Once I'
 
 Breaking on all URLs is nice at times, but it will get noisy if your app is making a lot of requests.
 
-Let's remove that breakpoint by right-clicking the breakpoint and selecting "Remove breakpoint".
+Let's remove that breakpoint by right-clicking and selecting "Remove breakpoint".
 
 You can set a more specific breakpoint based url or fragment matching. Add a new breakpoint by clicking the "+" icon. Now we can enter the url or fragment that we want to match on.
 
