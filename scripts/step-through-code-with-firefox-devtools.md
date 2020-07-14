@@ -2,7 +2,7 @@ Here I have a simple counter app. You can increase the count by clicking "+1", o
 
 If you want to follow along, there will be a link in the description.
 
-To debug a counter app, first open the dev tools.
+To debug an app, first open the dev tools.
 
 You can use the keyboard shortcut control-shift- or command-option-I, or right-click anywhere on the screen and select "Inspect Element".
 
@@ -14,7 +14,9 @@ When I select that from the listbox, Firefox opens that file in the sources pane
 
 Before trying to fix an error, we first need to learn how this code works.
 
-So I'm going to look for a function that I can tie to an action in the browser. Scanning through, this `handleIncrement` seems like a good starting point.
+So I'm going to look for a function that I can tie to some action in the browser. This will be my starting point.
+
+Scanning through, this `handleIncrement` seems like a good starting point.
 
 I'll add a breakpoint on the first line within the function by clicking on the line number (17).
 
@@ -26,7 +28,9 @@ I'll do that. Hit play, exit debug mode, and then click the "+1" button again to
 
 Back in the source pane, I can see that the `getCountValue` function is highlighted. That means I can click this downward arrow to "Step In" to this function.
 
-Stepping is the main way we can travel throughout our JavaScript code. By moving in an our of called functions, we can start to get a sense of how the code works.
+Stepping is the main way we can travel throughout our code. By moving in and out of called functions, we can start to get a sense of how the code works.
+
+Let's step into this function. And you can see that the debugger's focus has shifted to that function.
 
 Look down in the "Call stack" section. Here we can see all of the code that brought us to this point.
 
@@ -56,13 +60,13 @@ Rather than keeping an eye on these variables in "Scopes", we can go the "Watch 
 
 In this "Add watch expression" box, I'm going to type the name of the variable that I want to watch: `valueAsNumber`.
 
-Initially this is "unavailable", because the variable hasn't been initialized. When I step this line, the value automatically updates.
+Initially this is "unavailable", because the variable hasn't been initialized. When I step over this line, the value automatically updates.
 
 Now I can see that `value` is a string, but `valueAsNumber` is a number.
 
 We're just watching a variable here, but you can watch any type of expression.
 
-If we click the "+" icon, we can add something like `valueAsNumber * 5` and hit enter or return, the debugger will evaluate the epxression.
+If we click the "+" icon, we can add something like `valueAsNumber * 5` and hit enter or return, and the debugger will evaluate the expression.
 
 To remove watched expressions, click the "x" icon to the right.
 
@@ -78,9 +82,9 @@ Instead of stepping all the way through, though, I'm going to click "Step out". 
 
 When you're debugging, you may find yourself stepping in an out of functions to briefly check the flow of data. Don't feel like you need to step over every single line of code.
 
-Now when I hover over `next` I can see that we have used the value returned from `handleIncrement` to determine the next number.
+Now when I hover over `next` I can see that we have used the value returned from `getCountValue` to determine the next number.
 
-The `updateCount` function is highlighted, so let's "Step in" to that. This function assigns the passed argument to the `count` element's `value` property.
+The `updateCount` function is highlighted, so let's "Step in" to that. This function assigns the passed parameter to the `count` element's `value` property.
 
 I'm not going to bother stepping here; I'll click "Step out" to return to the original function.
 
