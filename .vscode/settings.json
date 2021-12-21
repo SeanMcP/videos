@@ -1,0 +1,16 @@
+{
+  "editor.minimap.enabled": false,
+  // "workbench.activityBar.visible": false,
+  // "workbench.statusBar.visible": false,
+  "editor.fontSize": 20,
+  "prettier.printWidth": 60,
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
